@@ -3,3 +3,4 @@
 *.md~
 */.settings/*
 */*/.settings/*
+*.log
