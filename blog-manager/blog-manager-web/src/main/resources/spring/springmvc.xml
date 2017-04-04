@@ -32,6 +32,4 @@
 	<!-- 这个主要是在web.xml的DispatchServlet中配的拦截url-pattern是/的时候静态资源才会被拦截，因此需要配一个这个静态资源映射 -->
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
-	<mvc:resources location="/commons/" mapping="/commons/**" />
-	<mvc:resources location="/images/" mapping="/images/**" />
 </beans>

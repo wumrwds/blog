@@ -8,9 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import xyz.fwblog.commons.utils.JsonUtils;
 import xyz.fwblog.rest.pojo.ResultList;
 import xyz.fwblog.rest.service.ArticleService;
-import xyz.fwblog.utils.JsonUtils;
 
 @Controller
 @RequestMapping("/article")
