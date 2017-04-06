@@ -248,6 +248,8 @@
   	t_article.id,
   	t_article.title,
   	t_user.loginName,
+  	t_user.nickName,
+  	t_user.pic,
   	t_category.category_name categoryName,
   	t_article.content_short contentShort,
   	t_article.created,

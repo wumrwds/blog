@@ -33,6 +33,7 @@
 
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/common.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $.ajax({  
@@ -47,12 +48,12 @@ $(document).ready(function(){
     	  $.each(data.dataList,function(index,item){
     		  $("#articleList").append(
     				  "<dl class='blog_list clearfix'><dt><img src='" + item.userPicPath + "' class='head'><p class='nickname'>"
-    				  + item.userName + "</p></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
+    				  + item.nickname + "</p></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
     				  + item.articleUrl + "' target='_blank'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
-    				  + item.articleShortDetail + "</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
+    				  + item.articleShortContent + "</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
     				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catUrl + "' target='_blank'>"
     				  + item.catName + "</a></span></div><div class='blog_list_b_r fr'><label>"
-    				  + item.timeCreated + "</label></div></div></dd></dl>");
+    				  + item.timeUpdated + "</label></div></div></dd></dl>");
     	  });
         },
         error: function(){

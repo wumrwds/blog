@@ -42,16 +42,9 @@
 	         	</ul>
          	</li>
          	<li>
-         		<span>类别管理</span>
-         		<ul>
-	         		<li data-options="attributes:{'url':'item-add'}">添加类别</li>
-	         		<li data-options="attributes:{'url':'item-list'}">查询所有类别</li>
-	         	</ul>
-         	</li>
-         	<li>
          		<span>网站内容管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'content-category'}">内容分类管理</li>
+	         		<li data-options="attributes:{'url':'content-category'}">分类管理</li>
 	         		<li data-options="attributes:{'url':'content'}">内容管理</li>
 	         	</ul>
          	</li>

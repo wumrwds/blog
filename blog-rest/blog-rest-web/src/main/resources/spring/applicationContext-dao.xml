@@ -29,6 +29,6 @@
 	</bean>
 	<!-- mapper扫描 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="xyz.fwblog.mapper" />
+		<property name="basePackage" value="xyz.fwblog.manager.mapper" />
 	</bean>
 </beans>

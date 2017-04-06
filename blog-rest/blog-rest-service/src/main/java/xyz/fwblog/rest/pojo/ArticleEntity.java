@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class ArticleEntity {
 	private String userPicPath;
-	private String userName;
+	private String nickname;
 	private String articleUrl;
 	private String articleTitle;
-	private String articleShortDetail;
+	private String articleShortContent;
 	private String catName;
-	private Date timeCreated;
+	private Date timeUpdated;
 
 	public String getUserPicPath() {
 		return userPicPath;
@@ -19,12 +19,12 @@ public class ArticleEntity {
 		this.userPicPath = userPicPath;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public String getArticleUrl() {
@@ -43,12 +43,12 @@ public class ArticleEntity {
 		this.articleTitle = articleTitle;
 	}
 
-	public String getArticleShortDetail() {
-		return articleShortDetail;
+	public String getArticleShortContent() {
+		return articleShortContent;
 	}
 
-	public void setArticleShortDetail(String articleShortDetail) {
-		this.articleShortDetail = articleShortDetail;
+	public void setArticleShortContent(String articleShortContent) {
+		this.articleShortContent = articleShortContent;
 	}
 
 	public String getCatName() {
@@ -59,12 +59,12 @@ public class ArticleEntity {
 		this.catName = catName;
 	}
 
-	public Date getTimeCreated() {
-		return timeCreated;
+	public Date getTimeUpdated() {
+		return timeUpdated;
 	}
 
-	public void setTimeCreated(Date timeCreated) {
-		this.timeCreated = timeCreated;
+	public void setTimeUpdated(Date timeUpdated) {
+		this.timeUpdated = timeUpdated;
 	}
 
 }
