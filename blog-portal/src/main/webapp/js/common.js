@@ -30,9 +30,9 @@ var FWBLOG = {
 		dir : "image"
 	},
 	// 格式化时间
-	formatDateTime : function(val){
-		var time = new Date(val);
-    	return time.format("yyyy-MM-dd hh:mm:ss");
+	formatDateTime : function(val,row){
+		var now = new Date(val);
+    	return now.format("yyyy-MM-dd hh:mm:ss");
 	},
 	// 格式化连接
 	formatUrl : function(val,row){

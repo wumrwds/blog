@@ -32,4 +32,6 @@ public interface TArticleMapper {
     int updateByPrimaryKey(TArticle record);
     
     List<TArticleExt> selectArticleExtList();
+    
+    List<TArticleExt> selectArticleExtListCreatedDesc();
 }

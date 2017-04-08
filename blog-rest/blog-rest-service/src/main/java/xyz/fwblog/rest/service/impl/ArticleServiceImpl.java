@@ -21,7 +21,7 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public ResultList getLatestArticle() {
 		// 取Article List
-		List<TArticleExt> list = articleMapper.selectArticleExtList();
+		List<TArticleExt> list = articleMapper.selectArticleExtListCreatedDesc();
 		
 		// 封装到ResultList中
 		List<ArticleEntity> dataList = new ArrayList<ArticleEntity>();
@@ -36,7 +36,7 @@ public class ArticleServiceImpl implements ArticleService {
 			item.setArticleTitle(tArticle.getTitle());
 			item.setArticleShortContent(tArticle.getContentShort());
 			item.setCatName(tArticle.getCategoryName());
-			item.setTimeUpdated(tArticle.getUpdated());
+			item.setTimeCreated(tArticle.getCreated());
 			dataList.add(item);
 		}
 		

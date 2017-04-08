@@ -259,4 +259,22 @@
   	INNER JOIN t_category
   	ON t_article.category_id = t_category.id
   </select>  
+  
+  <select id="selectArticleExtListCreatedDesc" resultType="xyz.fwblog.manager.pojo.TArticleExt">
+  	SELECT
+  	t_article.id,
+  	t_article.title,
+  	t_user.loginName,
+  	t_user.nickName,
+  	t_user.pic,
+  	t_category.category_name categoryName,
+  	t_article.content_short contentShort,
+  	t_article.created,
+  	t_article.updated
+  	FROM t_article INNER JOIN t_user
+  	ON t_article.user_id = t_user.id
+  	INNER JOIN t_category
+  	ON t_article.category_id = t_category.id
+  	ORDER BY t_article.created DESC
+  </select>  
 </mapper>

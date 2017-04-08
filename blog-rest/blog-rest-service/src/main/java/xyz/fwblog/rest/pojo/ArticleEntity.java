@@ -9,7 +9,7 @@ public class ArticleEntity {
 	private String articleTitle;
 	private String articleShortContent;
 	private String catName;
-	private Date timeUpdated;
+	private Date timeCreated;
 
 	public String getUserPicPath() {
 		return userPicPath;
@@ -59,12 +59,12 @@ public class ArticleEntity {
 		this.catName = catName;
 	}
 
-	public Date getTimeUpdated() {
-		return timeUpdated;
+	public Date getTimeCreated() {
+		return timeCreated;
 	}
 
-	public void setTimeUpdated(Date timeUpdated) {
-		this.timeUpdated = timeUpdated;
+	public void setTimeCreated(Date timeCreated) {
+		this.timeCreated = timeCreated;
 	}
 
 }
