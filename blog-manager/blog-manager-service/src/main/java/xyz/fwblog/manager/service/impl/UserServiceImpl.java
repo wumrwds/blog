@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import xyz.fwblog.commons.pojo.EasyUIDataGridResponse;
 import xyz.fwblog.commons.pojo.EasyUITreeNode;
 import xyz.fwblog.commons.pojo.ResponseData;
+import xyz.fwblog.commons.utils.ExceptionUtil;
 import xyz.fwblog.manager.mapper.TUserMapper;
 import xyz.fwblog.manager.pojo.TUser;
 import xyz.fwblog.manager.pojo.TUserExample;
@@ -53,7 +54,7 @@ public class UserServiceImpl implements UserService {
 			//TODO 这里因为数据库表结构设置了email，phone这些为unique key
 			//     假如email这些插入重了，还需要根据具体信息打印一下错误信息
 			e.printStackTrace();
-			return ResponseData.build(500, "保存用户至服务器出错");
+			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
 		}
 	}
 	
@@ -78,7 +79,7 @@ public class UserServiceImpl implements UserService {
 			return ResponseData.ok();
 		} catch(Exception e) {
 			e.printStackTrace();
-			return ResponseData.build(500, "更新用户到服务器错误");
+			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
 		}
 	}
 	
@@ -91,7 +92,7 @@ public class UserServiceImpl implements UserService {
 			return ResponseData.ok();
 		} catch(Exception e) {
 			e.printStackTrace();
-			return ResponseData.build(500, "从服务器删除用户出错");
+			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
 		}
 	}
 }

@@ -242,7 +242,7 @@
   </update>
   
 
-
+  <!-- manager -->
   <select id="selectArticleExtList" resultType="xyz.fwblog.manager.pojo.TArticleExt">
   	SELECT
   	t_article.id,
@@ -260,21 +260,39 @@
   	ON t_article.category_id = t_category.id
   </select>  
   
-  <select id="selectArticleExtListCreatedDesc" resultType="xyz.fwblog.manager.pojo.TArticleExt">
+  <!--  portal -->
+  <select id="selectAllArticlesCreatedDesc" resultType="xyz.fwblog.commons.pojo.PortalArticleEntity">
   	SELECT
-  	t_article.id,
-  	t_article.title,
-  	t_user.loginName,
+  	t_user.id userId,
+  	t_user.pic userPicPath,
   	t_user.nickName,
-  	t_user.pic,
-  	t_category.category_name categoryName,
-  	t_article.content_short contentShort,
-  	t_article.created,
-  	t_article.updated
+  	t_article.id articleId,
+  	t_article.title articleTitle,
+  	t_article.content_short articleShortContent,
+  	t_category.id catId,
+  	t_category.category_name catName,
+  	t_article.created timeCreated
   	FROM t_article INNER JOIN t_user
   	ON t_article.user_id = t_user.id
   	INNER JOIN t_category
   	ON t_article.category_id = t_category.id
   	ORDER BY t_article.created DESC
+  </select>  
+  
+  <select id="selectAllArticles" resultType="xyz.fwblog.commons.pojo.PortalArticleEntity">
+  	SELECT
+  	t_user.id userId,
+  	t_user.pic userPicPath,
+  	t_user.nickName,
+  	t_article.id articleId,
+  	t_article.title articleTitle,
+  	t_article.content_short articleShortContent,
+  	t_category.id catId,
+  	t_category.category_name catName,
+  	t_article.created timeCreated
+  	FROM t_article INNER JOIN t_user
+  	ON t_article.user_id = t_user.id
+  	INNER JOIN t_category
+  	ON t_article.category_id = t_category.id
   </select>  
 </mapper>

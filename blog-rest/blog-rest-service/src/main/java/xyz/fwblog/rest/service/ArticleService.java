@@ -1,9 +1,9 @@
 package xyz.fwblog.rest.service;
 
-import xyz.fwblog.rest.pojo.ResultList;
+import xyz.fwblog.commons.pojo.PortalArticleListResponse;
 
 public interface ArticleService {
 
-	ResultList getLatestArticle();
+	PortalArticleListResponse getLatestArticle();
 
 }

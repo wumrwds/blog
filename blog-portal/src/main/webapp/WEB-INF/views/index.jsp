@@ -47,11 +47,12 @@ $(document).ready(function(){
         success: function(data){  
     	  $.each(data.dataList,function(index,item){
     		  $("#articleList").append(
-    				  "<dl class='blog_list clearfix'><dt><img src='" + item.userPicPath + "' class='head'><p class='nickname'>"
-    				  + item.nickname + "</p></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
-    				  + item.articleUrl + "' target='_blank'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
+    				  "<dl class='blog_list clearfix'><dt><a href='" + item.userId + "'><img src='" + item.userPicPath 
+    				  + "' class='head'><a href='" + item.userId + "' class='nickname'>"
+    				  + item.nickname + "</a></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
+    				  + item.articleId + "' target='_blank'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
     				  + item.articleShortContent + " ...</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
-    				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catUrl + "' target='_blank'>"
+    				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catId + "' target='_blank'>"
     				  + item.catName + "</a></span></div><div class='blog_list_b_r fr'><label>"
     				  + FWBLOG.formatDateTime(item.timeCreated) + "</label></div></div></dd></dl>");
     	  });
@@ -145,9 +146,9 @@ $(document).ready(function(){
 									<h3 class="title">快速访问</h3>
 									<ul id="menu-quick-links" class="menu clearfix" style="margin-top: 10px">
 										<li><a href="index-2.html">我的博客</a></li>
-										<li><a href="articles-list.html">文章列表</a></li>
+										<li><a href="articles-list.html">个人信息</a></li>
+										<li><a href="contact.html">写文章</a></li>
 										<li><a href="faq.html">FAQs</a></li>
-										<li><a href="contact.html">联系我</a></li>
 									</ul>
 								</div>
 							</section>

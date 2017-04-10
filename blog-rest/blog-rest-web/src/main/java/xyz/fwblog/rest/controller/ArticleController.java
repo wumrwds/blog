@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import xyz.fwblog.commons.pojo.PortalArticleListResponse;
 import xyz.fwblog.commons.utils.JsonUtils;
-import xyz.fwblog.rest.pojo.ResultList;
 import xyz.fwblog.rest.service.ArticleService;
 
 @Controller
@@ -22,8 +22,8 @@ public class ArticleController {
 	@RequestMapping(value="/list", produces=MediaType.APPLICATION_JSON_VALUE+";charset=utf-8")
 	@ResponseBody
 	public String getArticleList(String callback) {
-		ResultList resultList = articleService.getLatestArticle();
-		String json = JsonUtils.objectToJson(resultList);
+		PortalArticleListResponse responseList = articleService.getLatestArticle();
+		String json = JsonUtils.objectToJson(responseList);
 		if(StringUtils.isBlank(callback))
 			return json;
 		return callback + "(" + json + ");";
