@@ -47,10 +47,10 @@ $(document).ready(function(){
         success: function(data){  
     	  $.each(data.dataList,function(index,item){
     		  $("#articleList").append(
-    				  "<dl class='blog_list clearfix'><dt><a href='" + item.userId + "'><img src='" + item.userPicPath 
-    				  + "' class='head'><a href='" + item.userId + "' class='nickname'>"
-    				  + item.nickname + "</a></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
-    				  + item.articleId + "' target='_blank'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
+    				  "<dl class='blog_list clearfix'><dt><a target='_blank' href='/article/show/" + item.userId + ".html'><img src='" + item.userPicPath 
+    				  + "' class='head'><a target='_blank' href='/article/show/" + item.userId + ".html' class='nickname'>"
+    				  + item.nickname + "</a></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a target='_blank' href='/article/show/" + item.userId 
+    				  + "/" + item.articleId + ".html'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
     				  + item.articleShortContent + " ...</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
     				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catId + "' target='_blank'>"
     				  + item.catName + "</a></span></div><div class='blog_list_b_r fr'><label>"

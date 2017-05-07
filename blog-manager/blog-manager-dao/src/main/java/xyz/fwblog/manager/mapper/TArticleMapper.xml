@@ -294,5 +294,20 @@
   	ON t_article.user_id = t_user.id
   	INNER JOIN t_category
   	ON t_article.category_id = t_category.id
+  </select>
+    
+  <select id="selectArticleById" parameterType="java.lang.Long" resultType="xyz.fwblog.commons.pojo.PortalArticleDetail">
+  	SELECT
+  	t_article.id articleId,
+  	t_article.title articleTitle,
+  	t_article_detail.content,
+  	t_category.id catId,
+  	t_category.category_name catName,
+  	t_article.created timeCreated
+  	FROM t_article INNER JOIN t_article_detail
+  	ON t_article.id = t_article_detail.article_id
+  	INNER JOIN t_category
+  	ON t_article.category_id = t_category.id
+  	WHERE t_article.id = #{id,jdbcType=BIGINT}
   </select>  
 </mapper>

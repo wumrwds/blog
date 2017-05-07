@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -48,35 +49,6 @@
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/common.js" type="text/javascript"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $.ajax({  
-        type:"GET",
-        async: false,
-        url: "http://localhost:8081/rest/article/list",  
-        dataType:"jsonp",
-        jsonp: "callback",
-        jsonpCallback:"getArticleList",
-        global:false,   
-        success: function(data){  
-    	  $.each(data.dataList,function(index,item){
-    		  $("#articleList").append(
-    				  "<dl class='blog_list clearfix'><dt><img src='" + item.userPicPath + "' class='head'><p class='nickname'>"
-    				  + item.nickname + "</p></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a href='"
-    				  + item.articleUrl + "' target='_blank'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
-    				  + item.articleShortContent + " ...</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
-    				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catUrl + "' target='_blank'>"
-    				  + item.catName + "</a></span></div><div class='blog_list_b_r fr'><label>"
-    				  + FWBLOG.formatDateTime(item.timeCreated) + "</label></div></div></dd></dl>");
-    	  });
-        },
-        error: function(){
-            alert('fail');
-        }
-    });
-});
-</script>
-
 </head>
 
 <body>
@@ -90,8 +62,8 @@ $(document).ready(function(){
 		<div class="search-area container">
 			<h3 class="search-header">站 内 搜 索</h3>
 			<form id="search-form" class="search-form clearfix" method="get"
-				action="#" autocomplete="off">
-				<input class="search-term required" type="text" id="s" name="s"
+				action="http://localhost:8082/search.html" autocomplete="off">
+				<input class="search-term required" type="text" id="s" name="query"
 					placeholder="请输入要搜索的内容"
 					title="* 请输入要搜索的内容!" style="height:45px;line-height:40px;font-size:18px"/> <input class="search-btn"
 					type="submit" value="搜 索" style="height:45px;"/>
@@ -109,36 +81,33 @@ $(document).ready(function(){
 				<!-- start of page content -->
 				<div class="span11 main-listing">
 
-					<article class="format-standard type-post hentry clearfix">
-
-					<header class="clearfix">
-
-					<h3 class="post-title">
-						<a href="single.html">Integrating WordPress with Your Website</a>
-					</h3>
-
-					<div class="post-meta clearfix">
-						<span class="date">25 Feb, 2013</span> <span class="category"><a
-							href="#" title="View all posts in Server &amp; Database">Server
-								&amp; Database</a></span> <span class="comments"><a href="#"
-							title="Comment on Integrating WordPress with Your Website">3
-								Comments</a></span> <span class="like-count">66</span>
+					<div id="articleList" class="blog_list_wrap">
+					<!-- 最新文章列表 -->
+						<c:forEach items="${articleList}" var="item">
+							<dl class="blog_list clearfix">
+								<dt>
+									<a href="${item.userId }"><img
+										src="${item.userPicPath }"
+										class="head"></a><a href="${item.userId }" class="nickname">${item.nickname }</a>
+								</dt>
+								<dd>
+									<h3 class="tracking-ad" data-mod="popu_254">
+										<a href="${item.articleId }" target="_blank">${item.articleTitle }</a>
+									</h3>
+									<div class="blog_list_c">${item.articleShortContent }...</div>
+									<div class="blog_list_b clearfix">
+										<div class="blog_list_b_l fl">
+											<span><i class="fa fa-list-ul"></i><a href="${item.catId }"
+												target="_blank">${item.catName }</a></span>
+										</div>
+										<div class="blog_list_b_r fr">
+											<label>${item.timeCreated }</label>
+										</div>
+									</div>
+								</dd>
+							</dl>
+						</c:forEach>
 					</div>
-					<!-- end of post meta --> </header>
-
-					<p>
-						Many of us work in an endless stream of tasks, browser tasks,
-						social media, emails, meetings, rushing from one thing to another,
-						never pausing and never ending.&nbsp;Then the day is over, and we
-						are exhausted, and we often have very little to show for it. And
-						we start the next . . . <a class="readmore-link"
-							href="http://knowledgebase.inspirythemes.com/integrating-wordpress-with-your-website/">Read
-							more</a>
-					</p>
-
-					</article>
-					
-
 
 					
 

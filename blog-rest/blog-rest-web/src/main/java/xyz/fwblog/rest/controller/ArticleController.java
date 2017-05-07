@@ -5,10 +5,14 @@ import javax.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import xyz.fwblog.commons.pojo.PortalArticleDetail;
 import xyz.fwblog.commons.pojo.PortalArticleListResponse;
+import xyz.fwblog.commons.pojo.ResponseData;
+import xyz.fwblog.commons.utils.ExceptionUtil;
 import xyz.fwblog.commons.utils.JsonUtils;
 import xyz.fwblog.rest.service.ArticleService;
 
@@ -27,5 +31,17 @@ public class ArticleController {
 		if(StringUtils.isBlank(callback))
 			return json;
 		return callback + "(" + json + ");";
+	}
+	
+	@RequestMapping("/{articleId}")
+	@ResponseBody
+	public ResponseData getArticleById(@PathVariable Long articleId) {
+		try {
+			PortalArticleDetail article = articleService.getArticleById(articleId);
+			return ResponseData.ok(article);
+		} catch(Exception e) {
+			e.printStackTrace();
+			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
+		}
 	}
 }

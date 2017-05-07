@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import xyz.fwblog.commons.pojo.PortalArticleDetail;
 import xyz.fwblog.commons.pojo.PortalArticleEntity;
 import xyz.fwblog.manager.pojo.TArticle;
 import xyz.fwblog.manager.pojo.TArticleExample;
@@ -37,5 +38,7 @@ public interface TArticleMapper {
     List<PortalArticleEntity> selectAllArticlesCreatedDesc();
     
     List<PortalArticleEntity> selectAllArticles();
+    
+    PortalArticleDetail selectArticleById(Long id);
     
 }
