@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>FwBlog</title>
+<title>FwBlog 编程爱好者的博客论坛</title>
 
 <link rel="shortcut icon" href="../../images/favicon.png" />
 
@@ -47,9 +47,9 @@ $(document).ready(function(){
         success: function(data){  
     	  $.each(data.dataList,function(index,item){
     		  $("#articleList").append(
-    				  "<dl class='blog_list clearfix'><dt><a target='_blank' href='/article/show/" + item.userId + ".html'><img src='" + item.userPicPath 
-    				  + "' class='head'><a target='_blank' href='/article/show/" + item.userId + ".html' class='nickname'>"
-    				  + item.nickname + "</a></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a target='_blank' href='/article/show/" + item.userId 
+    				  "<dl class='blog_list clearfix'><dt><a target='_blank' href='/article/" + item.userId + ".html'><img src='" + item.userPicPath 
+    				  + "' class='head'><a target='_blank' href='/article/" + item.userId + ".html' class='nickname'>"
+    				  + item.nickname + "</a></dt><dd><h3 class='tracking-ad' data-mod='popu_254'><a target='_blank' href='/article/" + item.userId 
     				  + "/" + item.articleId + ".html'>" + item.articleTitle + "</a></h3><div class='blog_list_c'>"
     				  + item.articleShortContent + " ...</div><div class='blog_list_b clearfix'><div class='blog_list_b_l fl'>"
     				  + "<span><i class='fa fa-list-ul'></i><a href='" + item.catId + "' target='_blank'>"

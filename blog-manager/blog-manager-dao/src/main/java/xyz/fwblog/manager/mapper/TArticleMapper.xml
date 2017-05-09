@@ -310,4 +310,23 @@
   	ON t_article.category_id = t_category.id
   	WHERE t_article.id = #{id,jdbcType=BIGINT}
   </select>  
+  
+  <select id="selectArticleByUser" parameterType="java.lang.Long" resultType="xyz.fwblog.commons.pojo.PortalArticleEntity">
+  	SELECT
+  	t_user.id userId,
+  	t_user.pic userPicPath,
+  	t_user.nickName,
+  	t_article.id articleId,
+  	t_article.title articleTitle,
+  	t_article.content_short articleShortContent,
+  	t_category.id catId,
+  	t_category.category_name catName,
+  	t_article.created timeCreated
+  	FROM t_article INNER JOIN t_user
+  	ON t_article.user_id = t_user.id
+  	INNER JOIN t_category
+  	ON t_article.category_id = t_category.id
+  	WHERE t_article.user_id = #{userId,jdbcType=BIGINT}
+  	ORDER BY t_article.created DESC
+  </select> 
 </mapper>

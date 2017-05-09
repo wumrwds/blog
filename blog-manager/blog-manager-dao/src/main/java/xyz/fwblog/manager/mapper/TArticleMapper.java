@@ -41,4 +41,6 @@ public interface TArticleMapper {
     
     PortalArticleDetail selectArticleById(Long id);
     
+    List<PortalArticleEntity> selectArticleByUser(Long userId);
+    
 }

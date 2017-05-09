@@ -1,5 +1,7 @@
 package xyz.fwblog.rest.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import xyz.fwblog.commons.pojo.PortalArticleDetail;
+import xyz.fwblog.commons.pojo.PortalArticleEntity;
 import xyz.fwblog.commons.pojo.PortalArticleListResponse;
 import xyz.fwblog.commons.pojo.ResponseData;
 import xyz.fwblog.commons.utils.ExceptionUtil;
@@ -39,6 +42,18 @@ public class ArticleController {
 		try {
 			PortalArticleDetail article = articleService.getArticleById(articleId);
 			return ResponseData.ok(article);
+		} catch(Exception e) {
+			e.printStackTrace();
+			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
+		}
+	}
+	
+	@RequestMapping("/userpage/{userId}")
+	@ResponseBody
+	public ResponseData getArticleListByUser(@PathVariable Long userId) {
+		try {
+			List<PortalArticleEntity> articleList = articleService.getArticleByUser(userId);
+			return ResponseData.ok(articleList);
 		} catch(Exception e) {
 			e.printStackTrace();
 			return ResponseData.build(500, ExceptionUtil.getStackTrace(e));
