@@ -38,7 +38,7 @@
          		<span>评论管理</span>
          		<ul>
 	         		<li data-options="attributes:{'url':'item-add'}">添加评论</li>
-	         		<li data-options="attributes:{'url':'item-list'}">查询评论</li>
+	         		<li data-options="attributes:{'url':'user-list'}">查询评论</li>
 	         	</ul>
          	</li>
          	<li>

@@ -41,6 +41,6 @@ public class ArticleController {
 		TUser user = userService.getUserInfoById(userId);
 		model.addAttribute("articleList", articleList);
 		model.addAttribute("user", user);
-		return "user_homepage";
+		return "user_page";
 	}
 }

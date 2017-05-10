@@ -56,6 +56,12 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- 文件上传组件 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
 	</dependencies>
 	
 	<!-- 因为需要发布，因此还需要添加tomcat7的maven插件 -->
