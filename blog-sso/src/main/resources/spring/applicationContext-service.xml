@@ -13,8 +13,8 @@
 	
 	<!-- Redis单机客户端 -->
 	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
-		<ccnstructor-arg name="host" value="193.168.25.153"></ccnstructor-arg>
-		<ccnstructor-arg name="port" value="6379"></ccnstructor-arg>
+		<constructor-arg name="host" value="10.136.243.182"></constructor-arg>
+		<constructor-arg name="port" value="6379"></constructor-arg>
 	</bean>
 	
 	<bean id="jedisClientSingle" class="xyz.fwblog.sso.component.impl.JedisClientSingle"></bean>
