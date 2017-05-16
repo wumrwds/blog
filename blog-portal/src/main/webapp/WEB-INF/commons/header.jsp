@@ -14,25 +14,23 @@
 			<nav class="main-nav">
 				<div class="menu-top-menu-container">
 					<ul id="menu-top-menu" class="clearfix">
-						<li><a href="index-2.html">主页</a></li>
-						<li><a href="articles-list.html">分类</a></li>
+						<li><a href="/">主页</a></li>
+						<li><a href="#">分类</a>
+							<ul class="sub-menu">
+								<li><a href="/category/1.html">编程语言</a></li>
+								<li><a href="/category/2.html">Web前端</a></li>
+								<li><a href="/category/3.html">后端架构</a></li>
+								<li><a href="/category/4.html">移动开发</a></li>
+								<li><a href="/category/5.html">数据库</a></li>
+								<li><a href="/category/6.html">大数据/云计算 </a></li>
+								<li><a href="/category/7.html">机器学习</a></li>
+								<li><a href="/category/8.html">其他</a></li>
+							</ul>
+						</li>
 						<li><a href="faq.html">搜索</a></li>
-						<li><a href="faq.html">登录</a></li>
-						<li><a href="faq.html">注册</a></li>
-<!-- 						<li><a href="#">Skins</a> -->
-<!-- 							<ul class="sub-menu"> -->
-<!-- 								<li><a href="blue-skin.html">Blue Skin</a></li> -->
-<!-- 								<li><a href="green-skin.html">Green Skin</a></li> -->
-<!-- 								<li><a href="red-skin.html">Red Skin</a></li> -->
-<!-- 								<li><a href="index-2.html">Default Skin</a></li> -->
-<!-- 							</ul></li> -->
-<!-- 						<li><a href="#">More</a> -->
-<!-- 							<ul class="sub-menu"> -->
-<!-- 								<li><a href="full-width.html">Full Width</a></li> -->
-<!-- 								<li><a href="elements.html">Elements</a></li> -->
-<!-- 								<li><a href="page.html">Sample Page</a></li> -->
-<!-- 							</ul></li> -->
-<!-- 						<li><a href="contact.html">Contact</a></li> -->
+						<li id="li_login"><a href="http://localhost:8084/account/login">登录</a></li>
+						<li id="li_register"><a href="http://localhost:8084/account/register">注册</a></li>
+						<li id="li_userinfo"></li>
 					</ul>
 				</div>
 			</nav>

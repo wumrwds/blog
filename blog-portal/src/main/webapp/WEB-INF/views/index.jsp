@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="../../css/blog_index.css">
 <link rel="stylesheet" href="../../css/common_index.css">
 
-<link rel="stylesheet" href="../../css/taotao/taotao.css">
+<link rel="stylesheet" href="../../css/blog.css">
 
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
@@ -244,6 +244,7 @@ $(document).ready(function(){
 
 	<!-- script -->
 	<script type='text/javascript' src='../../js/jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='../../js/jquery.cookie.js'></script>
 	<script type='text/javascript' src='../../js/jquery.easing.1.3.js'></script>
 	<script type='text/javascript'
 		src='../../js/prettyphoto/jquery.prettyPhoto.js'></script>
@@ -252,5 +253,6 @@ $(document).ready(function(){
 	<script type='text/javascript' src='../../js/jquery.form.js'></script>
 	<script type='text/javascript' src='../../js/jquery.validate.min.js'></script>
 	<script type='text/javascript' src='../../js/custom.js'></script>
+	<script type='text/javascript' src='../../js/header.js'></script>
 </body>
 </html>
